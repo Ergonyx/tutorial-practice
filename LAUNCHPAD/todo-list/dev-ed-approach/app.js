@@ -34,6 +34,7 @@ const createTodoItem = (event) => {
 
 const deleteComplete = (event) => {
     const item = event.target;
+    console.log(event.target)
     if (item.classList[0] === 'delete-btn') {
         const todo = item.parentElement;
         todo.classList.add('falloff')
@@ -56,8 +57,9 @@ const deleteComplete = (event) => {
 
 const filterList = (event) => {
     // For a reason I cannot find the node list from childNodes returns some weird text node before nodes that actually exist.  Instead, I chose to just use querySelectorAll for the list of todos.
-    //const todos = todoList.childNodes;
-    const todos = todoList.querySelectorAll('.todo');
+    const todos = todoList.childNodes;
+    console.log(todos)
+    // const todos = todoList.querySelectorAll('.todo');
     todos.forEach((todo) => {
         console.log(event.target.value)
         switch(event.target.value){
