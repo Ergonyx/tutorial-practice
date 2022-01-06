@@ -27,7 +27,6 @@ header, form {
     align-items: center;
 }
 
-/* Style the form so everything doesn't look so compressed by adding some padding, increasing font size, and removing borders. */
 form input, form button {
     padding: 0.5rem 1rem;
     font-size: 1.5rem;
