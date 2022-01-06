@@ -1,0 +1,157 @@
+/* Chose to use CSS variables so I can better organize my theme. */
+:root {
+    --background-color: rgb(42,27,61);
+    --background-gradient: linear-gradient(180deg, rgba(42,27,61,1) 0%, rgba(68,49,141,1) 100%); 
+    --font-color: #a4b3b6;
+    --primary-color: #8265A7;
+    --secondary-color: #d83f87;
+    --tertiary-color: #8860D0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    font-size: 1.5rem;
+}
+
+/* Centering the content */
+header, form {
+    min-height: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the form so everything doesn't look so compressed by adding some padding, increasing font size, and removing borders. */
+form input, form button {
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    border: none;
+}
+
+/* Deviated from tutorial with my own preferred colors for the background gradient. */
+body {
+    background: var(--background-color);
+    background: var(--background-gradient);
+    color: var(--font-color);
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    min-width: 450px;
+}
+
+form button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+form button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color)
+}
+
+/* I guess drop down menus are a nightmare to style?
+NOTE: Check deprecation status of some of these as they were crossed out in intellisense. */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+select {
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    top: 0;
+    right: 0;
+    padding: .75rem;
+    pointer-events: none;
+    transition: all .3s ease;
+}
+.select:hover::after {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+    min-width: 30%;
+    list-style: none;
+}
+
+.todo {
+    margin: 0.5rem;
+    background-color: var(--primary-color);
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .3s ease;
+}
+
+.todo li {
+    /* NOTE: Need to investigate this particular CSS property. */
+    flex: 1 
+}
+
+.complete-btn, .delete-btn {
+    padding: .70rem 1rem; 
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin: .25rem;
+    border-radius: 10px;
+}
+
+.complete-btn {
+    background-color: green;
+}
+
+.delete-btn {
+    background-color: red;
+}
+
+.todo-item {
+    padding: 0rem .5rem;
+}
+
+/* I never knew really understood the purpose of pointer-events until now.  Or at least this particular use case. */
+
+.zmdi-check, .zmdi-delete {
+    pointer-events: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.falloff {
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
