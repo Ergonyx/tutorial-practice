@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- NOTE: The font stuff.  Will need to look into this "preconnect" stuff since it differs from the tutorial. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="./mystyle.css">
+
+    <title>Todo List - The Dev Ed Approach</title>
+    
+</head>
+<body>
+    <header>
+      <h1>To-do List</h1>
+    </header>
+      <form>
+        <input class="todo-input" type="text" placeholder="Enter New Item Here...">
+        <button class="todo-button" type="submit"><i class="zmdi zmdi-plus-circle"></i></button>
+        <div class="select">
+          <select name="todos" class="filter-todos">
+            <option value="all">All</option>
+            <option value="complete">Complete</option>
+            <option value="incomplete">Incomplete</option>
+          </select>
+        </div>
+        
+      </form>
+      <div class="todo-container">
+        <ul class="todo-list"></ul>
+      </div>
+  
+  <!-- Script at the bottom.  I've gotten into the habit of putting it at the top in the head with the 'defer' attribute. -->
+  <!-- NOTE: Research downsides of defering scripts in the head versus declaring scripts at the bottom of the body. -->
+  <script src="./app.js"></script>
+</body>
+</html>
